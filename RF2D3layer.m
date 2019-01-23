@@ -93,7 +93,7 @@ param(1).Ni=Ni11*Ni11;
 param(1).Nx=Nx1*Nx1;
 param(2).Ne=Ne21*Ne21;
 param(2).Ni=Ni21*Ni21;
-param(2).Nx=Ne11*Ne11;
+param(2).Nx=Ne11*Ne11;%feedforward from layer 2
 param(1).N=param(1).Ne+param(1).Ni;
 param(2).N=param(2).Ne+param(2).Ni;
 

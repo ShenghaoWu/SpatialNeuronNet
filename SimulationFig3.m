@@ -12,18 +12,23 @@ dim='2D';
 taui_range = [.5 2:1:15]; % time scale of inhibitory current (Fig. 2d)
 
 %%%%%%%% run on cluster %%%%%%%%%%%
-rng('shuffle');
-AI = getenv('PBS_ARRAYID');
-job_dex = str2num(AI);
-seed_offset = randi(floor(intmax/10));
-rng(job_dex + seed_offset);
+%rng('shuffle');
+%AI = getenv('PBS_ARRAYID');
+%job_dex = str2num(AI);
+%seed_offset = randi(floor(intmax/10));
+%rng(job_dex + seed_offset);
 % job_dex range from 1 to Np 
 
-Np=length(taui_range); 
-taudsyni=taui_range(job_dex); 
+%Np=length(taui_range); 
+%taudsyni=taui_range(job_dex); 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+
 tic
+
+Np=length(taui_range); 
+taudsyni=taui_range(1); 
+
 
 opt.save=1; % save data 
 opt.CompCorr=0; % compute correlations 

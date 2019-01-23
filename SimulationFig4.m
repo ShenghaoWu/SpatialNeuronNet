@@ -11,18 +11,18 @@ testp.inE=[0.];
 testp.inI=[0.1 .15 .2 .25 .3 .35 .4]; 
 
 %%%%%%%%%%%% for job array on cluster %%%%%%%%%%%%%%%% 
-rng('shuffle');
-AI = getenv('PBS_ARRAYID');
-job_dex = str2num(AI);
-seed_offset = randi(floor(intmax/10));
-rng(job_dex + seed_offset);
+%rng('shuffle');
+%AI = getenv('PBS_ARRAYID');
+%job_dex = str2num(AI);
+%seed_offset = randi(floor(intmax/10));
+%rng(job_dex + seed_offset);
 % job_dex range from 1 to 350  % Ntrial=50 per inI 
 
 Np=length(testp.inI)*length(testp.inE); 
-pid=mod(job_dex-1,Np)+1;
-trial=ceil(job_dex/Np); 
-ip1=1;  
-ip2=pid;
+%pid=mod(job_dex-1,Np)+1;
+%trial=ceil(job_dex/Np); 
+%ip1=1;  
+%ip2=pid;
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
